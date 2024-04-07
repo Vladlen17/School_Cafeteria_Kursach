@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="school_cafeteriaDataSet" targetNamespace="http://tempuri.org/school_cafeteriaDataSet.xsd" xmlns:mstns="http://tempuri.org/school_cafeteriaDataSet.xsd" xmlns="http://tempuri.org/school_cafeteriaDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="school_cafeteriaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="school_cafeteriaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Cafeteria.App.Properties.Settings.GlobalReference.Default.school_cafeteriaConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ЗаведующиеTableAdapter" GeneratorDataComponentClassName="ЗаведующиеTableAdapter" Name="Заведующие" UserDataComponentName="ЗаведующиеTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="school_cafeteriaConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Заведующие.Id, Заведующие.Имя, Заведующие.Фамилия, Заведующие.ДатаРождения, Заведующие.Пол, Заведующие.Телефон, Заведующие.ЭлектроннаяПочта, Заведующие.ДатаТрудоустройства, 
+                  Заведующие.Зарплата, Заведующие.Адрес, Классы.Наименование AS Класс
+FROM     Заведующие INNER JOIN
+                  Классы ON Заведующие.Id = Классы.ЗаведующийId</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="Имя" DataSetColumn="Имя" />
+              <Mapping SourceColumn="Фамилия" DataSetColumn="Фамилия" />
+              <Mapping SourceColumn="ДатаРождения" DataSetColumn="ДатаРождения" />
+              <Mapping SourceColumn="Пол" DataSetColumn="Пол" />
+              <Mapping SourceColumn="Телефон" DataSetColumn="Телефон" />
+              <Mapping SourceColumn="ЭлектроннаяПочта" DataSetColumn="ЭлектроннаяПочта" />
+              <Mapping SourceColumn="ДатаТрудоустройства" DataSetColumn="ДатаТрудоустройства" />
+              <Mapping SourceColumn="Зарплата" DataSetColumn="Зарплата" />
+              <Mapping SourceColumn="Адрес" DataSetColumn="Адрес" />
+              <Mapping SourceColumn="Класс" DataSetColumn="Класс" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="КлассыTableAdapter" GeneratorDataComponentClassName="КлассыTableAdapter" Name="Классы" UserDataComponentName="КлассыTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="school_cafeteriaConnectionString (Settings)" DbObjectName="school_cafeteria.dbo.Классы" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Классы] WHERE (([КлассId] = @Original_КлассId) AND ((@IsNull_Наименование = 1 AND [Наименование] IS NULL) OR ([Наименование] = @Original_Наименование)) AND ((@IsNull_ЗаведующийId = 1 AND [ЗаведующийId] IS NULL) OR ([ЗаведующийId] = @Original_ЗаведующийId)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_КлассId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="КлассId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Наименование" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Наименование" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Наименование" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Наименование" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ЗаведующийId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ЗаведующийId" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ЗаведующийId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ЗаведующийId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Классы] ([Наименование], [ЗаведующийId]) VALUES (@Наименование, @ЗаведующийId);
+SELECT КлассId, Наименование, ЗаведующийId FROM Классы WHERE (КлассId = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Наименование" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Наименование" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ЗаведующийId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ЗаведующийId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT КлассId, Наименование, ЗаведующийId FROM dbo.Классы</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Классы] SET [Наименование] = @Наименование, [ЗаведующийId] = @ЗаведующийId WHERE (([КлассId] = @Original_КлассId) AND ((@IsNull_Наименование = 1 AND [Наименование] IS NULL) OR ([Наименование] = @Original_Наименование)) AND ((@IsNull_ЗаведующийId = 1 AND [ЗаведующийId] IS NULL) OR ([ЗаведующийId] = @Original_ЗаведующийId)));
+SELECT КлассId, Наименование, ЗаведующийId FROM Классы WHERE (КлассId = @КлассId)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Наименование" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Наименование" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ЗаведующийId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ЗаведующийId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_КлассId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="КлассId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Наименование" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Наименование" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Наименование" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Наименование" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ЗаведующийId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ЗаведующийId" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ЗаведующийId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ЗаведующийId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="КлассId" ColumnName="КлассId" DataSourceName="school_cafeteria.dbo.Классы" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@КлассId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="КлассId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="КлассId" DataSetColumn="КлассId" />
+              <Mapping SourceColumn="Наименование" DataSetColumn="Наименование" />
+              <Mapping SourceColumn="ЗаведующийId" DataSetColumn="ЗаведующийId" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ПитаниеTableAdapter" GeneratorDataComponentClassName="ПитаниеTableAdapter" Name="Питание" UserDataComponentName="ПитаниеTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="school_cafeteriaConnectionString (Settings)" DbObjectName="school_cafeteria.dbo.Питание" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Питание] WHERE (([ПитаниеId] = @Original_ПитаниеId) AND ((@IsNull_Наименование = 1 AND [Наименование] IS NULL) OR ([Наименование] = @Original_Наименование)) AND ((@IsNull_ВидПитания = 1 AND [ВидПитания] IS NULL) OR ([ВидПитания] = @Original_ВидПитания)) AND ((@IsNull_Цена = 1 AND [Цена] IS NULL) OR ([Цена] = @Original_Цена)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ПитаниеId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ПитаниеId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Наименование" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Наименование" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Наименование" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Наименование" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ВидПитания" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ВидПитания" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_ВидПитания" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="ВидПитания" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Цена" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Цена" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_Цена" Precision="8" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="Цена" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Питание] ([Наименование], [ВидПитания], [Цена]) VALUES (@Наименование, @ВидПитания, @Цена);
+SELECT ПитаниеId, Наименование, ВидПитания, Цена FROM Питание WHERE (ПитаниеId = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Наименование" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Наименование" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@ВидПитания" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="ВидПитания" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Цена" Precision="8" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="Цена" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ПитаниеId, Наименование, ВидПитания, Цена FROM dbo.Питание</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Питание] SET [Наименование] = @Наименование, [ВидПитания] = @ВидПитания, [Цена] = @Цена WHERE (([ПитаниеId] = @Original_ПитаниеId) AND ((@IsNull_Наименование = 1 AND [Наименование] IS NULL) OR ([Наименование] = @Original_Наименование)) AND ((@IsNull_ВидПитания = 1 AND [ВидПитания] IS NULL) OR ([ВидПитания] = @Original_ВидПитания)) AND ((@IsNull_Цена = 1 AND [Цена] IS NULL) OR ([Цена] = @Original_Цена)));
+SELECT ПитаниеId, Наименование, ВидПитания, Цена FROM Питание WHERE (ПитаниеId = @ПитаниеId)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Наименование" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Наименование" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@ВидПитания" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="ВидПитания" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Цена" Precision="8" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="Цена" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ПитаниеId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ПитаниеId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Наименование" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Наименование" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Наименование" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Наименование" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ВидПитания" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ВидПитания" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_ВидПитания" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="ВидПитания" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Цена" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Цена" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_Цена" Precision="8" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="Цена" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ПитаниеId" ColumnName="ПитаниеId" DataSourceName="school_cafeteria.dbo.Питание" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ПитаниеId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ПитаниеId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ПитаниеId" DataSetColumn="ПитаниеId" />
+              <Mapping SourceColumn="Наименование" DataSetColumn="Наименование" />
+              <Mapping SourceColumn="ВидПитания" DataSetColumn="ВидПитания" />
+              <Mapping SourceColumn="Цена" DataSetColumn="Цена" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ПитаниеКлассыTableAdapter" GeneratorDataComponentClassName="ПитаниеКлассыTableAdapter" Name="ПитаниеКлассы" UserDataComponentName="ПитаниеКлассыTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="school_cafeteriaConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ПитаниеКлассы.ПитаниеКлассId, ПитаниеКлассы.ДеньНедели, Классы.Наименование, Питание.Наименование AS Expr1, Питание.ВидПитания, Питание.Цена
+FROM     ПитаниеКлассы INNER JOIN
+                  Классы ON ПитаниеКлассы.КлассId = Классы.КлассId INNER JOIN
+                  Питание ON ПитаниеКлассы.ПитаниеId = Питание.ПитаниеId</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ПитаниеКлассId" DataSetColumn="ПитаниеКлассId" />
+              <Mapping SourceColumn="ДеньНедели" DataSetColumn="ДеньНедели" />
+              <Mapping SourceColumn="Наименование" DataSetColumn="Наименование" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="ВидПитания" DataSetColumn="ВидПитания" />
+              <Mapping SourceColumn="Цена" DataSetColumn="Цена" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="school_cafeteriaDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="school_cafeteriaDataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="school_cafeteriaDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Заведующие" msprop:Generator_RowEvHandlerName="ЗаведующиеRowChangeEventHandler" msprop:Generator_RowDeletedName="ЗаведующиеRowDeleted" msprop:Generator_RowDeletingName="ЗаведующиеRowDeleting" msprop:Generator_RowEvArgName="ЗаведующиеRowChangeEvent" msprop:Generator_TablePropName="Заведующие" msprop:Generator_RowChangedName="ЗаведующиеRowChanged" msprop:Generator_UserTableName="Заведующие" msprop:Generator_RowChangingName="ЗаведующиеRowChanging" msprop:Generator_RowClassName="ЗаведующиеRow" msprop:Generator_TableClassName="ЗаведующиеDataTable" msprop:Generator_TableVarName="tableЗаведующие">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnVarNameInTable="columnId" type="xs:int" />
+              <xs:element name="Имя" msprop:Generator_ColumnPropNameInTable="ИмяColumn" msprop:Generator_ColumnPropNameInRow="Имя" msprop:Generator_UserColumnName="Имя" msprop:Generator_ColumnVarNameInTable="columnИмя" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Фамилия" msprop:Generator_ColumnPropNameInTable="ФамилияColumn" msprop:Generator_ColumnPropNameInRow="Фамилия" msprop:Generator_UserColumnName="Фамилия" msprop:Generator_ColumnVarNameInTable="columnФамилия" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ДатаРождения" msprop:Generator_ColumnPropNameInTable="ДатаРожденияColumn" msprop:Generator_ColumnPropNameInRow="ДатаРождения" msprop:Generator_UserColumnName="ДатаРождения" msprop:Generator_ColumnVarNameInTable="columnДатаРождения" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Пол" msprop:Generator_ColumnPropNameInTable="ПолColumn" msprop:Generator_ColumnPropNameInRow="Пол" msprop:Generator_UserColumnName="Пол" msprop:Generator_ColumnVarNameInTable="columnПол" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Телефон" msprop:Generator_ColumnPropNameInTable="ТелефонColumn" msprop:Generator_ColumnPropNameInRow="Телефон" msprop:Generator_UserColumnName="Телефон" msprop:Generator_ColumnVarNameInTable="columnТелефон" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ЭлектроннаяПочта" msprop:Generator_ColumnPropNameInTable="ЭлектроннаяПочтаColumn" msprop:Generator_ColumnPropNameInRow="ЭлектроннаяПочта" msprop:Generator_UserColumnName="ЭлектроннаяПочта" msprop:Generator_ColumnVarNameInTable="columnЭлектроннаяПочта" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ДатаТрудоустройства" msprop:Generator_ColumnPropNameInTable="ДатаТрудоустройстваColumn" msprop:Generator_ColumnPropNameInRow="ДатаТрудоустройства" msprop:Generator_UserColumnName="ДатаТрудоустройства" msprop:Generator_ColumnVarNameInTable="columnДатаТрудоустройства" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Зарплата" msprop:Generator_ColumnPropNameInTable="ЗарплатаColumn" msprop:Generator_ColumnPropNameInRow="Зарплата" msprop:Generator_UserColumnName="Зарплата" msprop:Generator_ColumnVarNameInTable="columnЗарплата" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Адрес" msprop:Generator_ColumnPropNameInTable="АдресColumn" msprop:Generator_ColumnPropNameInRow="Адрес" msprop:Generator_UserColumnName="Адрес" msprop:Generator_ColumnVarNameInTable="columnАдрес" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Класс" msprop:Generator_UserColumnName="Класс" msprop:Generator_ColumnPropNameInTable="КлассColumn" msprop:Generator_ColumnPropNameInRow="Класс" msprop:Generator_ColumnVarNameInTable="columnКласс" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Классы" msprop:Generator_RowEvHandlerName="КлассыRowChangeEventHandler" msprop:Generator_RowDeletedName="КлассыRowDeleted" msprop:Generator_RowDeletingName="КлассыRowDeleting" msprop:Generator_RowEvArgName="КлассыRowChangeEvent" msprop:Generator_TablePropName="Классы" msprop:Generator_RowChangedName="КлассыRowChanged" msprop:Generator_UserTableName="Классы" msprop:Generator_RowChangingName="КлассыRowChanging" msprop:Generator_RowClassName="КлассыRow" msprop:Generator_TableClassName="КлассыDataTable" msprop:Generator_TableVarName="tableКлассы">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="КлассId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="КлассIdColumn" msprop:Generator_ColumnPropNameInRow="КлассId" msprop:Generator_UserColumnName="КлассId" msprop:Generator_ColumnVarNameInTable="columnКлассId" type="xs:int" />
+              <xs:element name="Наименование" msprop:Generator_ColumnPropNameInTable="НаименованиеColumn" msprop:Generator_ColumnPropNameInRow="Наименование" msprop:Generator_UserColumnName="Наименование" msprop:Generator_ColumnVarNameInTable="columnНаименование" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ЗаведующийId" msprop:Generator_ColumnPropNameInTable="ЗаведующийIdColumn" msprop:Generator_ColumnPropNameInRow="ЗаведующийId" msprop:Generator_UserColumnName="ЗаведующийId" msprop:Generator_ColumnVarNameInTable="columnЗаведующийId" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Питание" msprop:Generator_RowEvHandlerName="ПитаниеRowChangeEventHandler" msprop:Generator_RowDeletedName="ПитаниеRowDeleted" msprop:Generator_RowDeletingName="ПитаниеRowDeleting" msprop:Generator_RowEvArgName="ПитаниеRowChangeEvent" msprop:Generator_TablePropName="Питание" msprop:Generator_RowChangedName="ПитаниеRowChanged" msprop:Generator_UserTableName="Питание" msprop:Generator_RowChangingName="ПитаниеRowChanging" msprop:Generator_RowClassName="ПитаниеRow" msprop:Generator_TableClassName="ПитаниеDataTable" msprop:Generator_TableVarName="tableПитание">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ПитаниеId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="ПитаниеIdColumn" msprop:Generator_ColumnPropNameInRow="ПитаниеId" msprop:Generator_UserColumnName="ПитаниеId" msprop:Generator_ColumnVarNameInTable="columnПитаниеId" type="xs:int" />
+              <xs:element name="Наименование" msprop:Generator_ColumnPropNameInTable="НаименованиеColumn" msprop:Generator_ColumnPropNameInRow="Наименование" msprop:Generator_UserColumnName="Наименование" msprop:Generator_ColumnVarNameInTable="columnНаименование" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ВидПитания" msprop:Generator_ColumnPropNameInTable="ВидПитанияColumn" msprop:Generator_ColumnPropNameInRow="ВидПитания" msprop:Generator_UserColumnName="ВидПитания" msprop:Generator_ColumnVarNameInTable="columnВидПитания" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Цена" msprop:Generator_ColumnPropNameInTable="ЦенаColumn" msprop:Generator_ColumnPropNameInRow="Цена" msprop:Generator_UserColumnName="Цена" msprop:Generator_ColumnVarNameInTable="columnЦена" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ПитаниеКлассы" msprop:Generator_RowEvHandlerName="ПитаниеКлассыRowChangeEventHandler" msprop:Generator_RowDeletedName="ПитаниеКлассыRowDeleted" msprop:Generator_RowDeletingName="ПитаниеКлассыRowDeleting" msprop:Generator_RowEvArgName="ПитаниеКлассыRowChangeEvent" msprop:Generator_TablePropName="ПитаниеКлассы" msprop:Generator_RowChangedName="ПитаниеКлассыRowChanged" msprop:Generator_UserTableName="ПитаниеКлассы" msprop:Generator_RowChangingName="ПитаниеКлассыRowChanging" msprop:Generator_RowClassName="ПитаниеКлассыRow" msprop:Generator_TableClassName="ПитаниеКлассыDataTable" msprop:Generator_TableVarName="tableПитаниеКлассы">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ПитаниеКлассId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="ПитаниеКлассIdColumn" msprop:Generator_ColumnPropNameInRow="ПитаниеКлассId" msprop:Generator_UserColumnName="ПитаниеКлассId" msprop:Generator_ColumnVarNameInTable="columnПитаниеКлассId" type="xs:int" />
+              <xs:element name="ДеньНедели" msprop:Generator_ColumnPropNameInTable="ДеньНеделиColumn" msprop:Generator_ColumnPropNameInRow="ДеньНедели" msprop:Generator_UserColumnName="ДеньНедели" msprop:Generator_ColumnVarNameInTable="columnДеньНедели" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Наименование" msprop:Generator_ColumnPropNameInRow="Наименование" msprop:Generator_ColumnPropNameInTable="НаименованиеColumn" msprop:Generator_ColumnVarNameInTable="columnНаименование" msprop:Generator_UserColumnName="Наименование" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Expr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_UserColumnName="Expr1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ВидПитания" msprop:Generator_ColumnPropNameInRow="ВидПитания" msprop:Generator_ColumnPropNameInTable="ВидПитанияColumn" msprop:Generator_ColumnVarNameInTable="columnВидПитания" msprop:Generator_UserColumnName="ВидПитания" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Цена" msprop:Generator_ColumnPropNameInRow="Цена" msprop:Generator_ColumnPropNameInTable="ЦенаColumn" msprop:Generator_ColumnVarNameInTable="columnЦена" msprop:Generator_UserColumnName="Цена" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Заведующие" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="Классы_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Классы" />
+      <xs:field xpath="mstns:КлассId" />
+    </xs:unique>
+    <xs:unique name="Питание_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Питание" />
+      <xs:field xpath="mstns:ПитаниеId" />
+    </xs:unique>
+    <xs:unique name="ПитаниеКлассы_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ПитаниеКлассы" />
+      <xs:field xpath="mstns:ПитаниеКлассId" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK__Классы__Заведующ__3B75D760" msdata:parent="Заведующие" msdata:child="Классы" msdata:parentkey="Id" msdata:childkey="ЗаведующийId" msprop:Generator_UserParentTable="Заведующие" msprop:Generator_UserChildTable="Классы" msprop:Generator_RelationVarName="relationFK__Классы__Заведующ__3B75D760" msprop:Generator_ChildPropName="GetКлассыRows" msprop:Generator_ParentPropName="ЗаведующиеRow" msprop:Generator_UserRelationName="FK__Классы__Заведующ__3B75D760" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>
